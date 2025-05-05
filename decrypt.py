@@ -8,9 +8,11 @@ import time
 
 fileCount = 0
 
+key_directory = 'key.key'
+
 def readKey():
     try:
-        return open("key.key", "rb").read()
+        return open(key_directory, "rb").read()
     except:
         return("Error")
 
@@ -29,6 +31,8 @@ input(termcolor.colored("\nPress any key to continue ", color="magenta"))
 
 directory = input(termcolor.colored("\nEnter the main directory to be decrypted (leave blank to use the current one): ", color="yellow"))
 
+key_directory = input(termcolor.colored("\nEnter the path to the key (leave blank to look in the current directory): ", color="yellow"))
+
 if len(directory) > 1:
     directory = directory
 else:
@@ -37,7 +41,7 @@ else:
 key = readKey()
 
 if key == "Error":
-    print(termcolor.colored("\nERROR: Key not available, be sure to have the key in the same directory", color="red", attrs=["bold"]))
+    print(termcolor.colored("\nERROR: Key not available, be sure to have the key in the same directory or enter the the correct path", color="red", attrs=["bold"]))
     quit()
 
 choice = input(termcolor.colored("\nAre you sure you want to continue? y/n ", color="magenta", attrs=["bold"]))
