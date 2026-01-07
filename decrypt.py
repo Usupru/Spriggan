@@ -55,19 +55,24 @@ if "y" in choice:
         for file in files:
             if file not in ["spriggan.py", "key.key", "decrypt.py"]:
 
-                filePath = os.path.join(root, file)
+                try:
 
-                contents = open(filePath, "rb").read()
-                f = Fernet(key)
+                    filePath = os.path.join(root, file)
 
-                contents = f.decrypt(contents)
+                    contents = open(filePath, "rb").read()
+                    f = Fernet(key)
 
-                with open(filePath, "wb") as targetFile:
-                    targetFile.write(contents)
+                    contents = f.decrypt(contents)
+
+                    with open(filePath, "wb") as targetFile:
+                        targetFile.write(contents)
             
-                print(termcolor.colored("Decrypting " + str(file), color="yellow"))
+                    print(termcolor.colored("Decrypting " + str(file), color="yellow"))
 
-                fileCount = fileCount + 1
+                    fileCount = fileCount + 1
+
+                except:
+                    print(termcolor.colored("ERROR: " + str(file) + " could not be decrypted", color="red", attrs=["bold"]))
 
 
     print(termcolor.colored("\nDecryption successful, " + str(fileCount) + " files have been decrypted", color="green", attrs=["bold"]))
