@@ -1,4 +1,4 @@
-#🛡️ Spriggan
+<h1>🛡️ Spriggan</h1>
 
 ##Spriggan is a lightweight Python tool focused on encrypting and decrypting sensitive data in a simple, fast, and reusable way.
 It’s designed for personal projects, scripts, and small utilities.
