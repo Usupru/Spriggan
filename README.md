@@ -1,15 +1,18 @@
 <h1>🛡️ Spriggan</h1>
 
-##Spriggan is a lightweight Python tool focused on encrypting and decrypting sensitive data in a simple, fast, and reusable way.
+Spriggan is a lightweight Python tool focused on encrypting and decrypting sensitive data in a simple, fast, and reusable way.
 It’s designed for personal projects, scripts, and small utilities.
 
 This project was built along my cybersecurity journey, with the purpose of spreading awareness about the dangers of attackers once
 our systems are compromised
 
 <h2>🚀 Features</h2>
-*🔐 Encrypt text or data securely
-*🔓 Decrypt previously encrypted content
-*🧩 Terminal User-friendly interface
+
+<ul>
+<li>🔐 Encrypt text or data securely</li>
+<li>🔓 Decrypt previously encrypted content</li>
+<li>🧩 Terminal User-friendly interface</li>
+</ul>
 
 <h2>📦 Installation</h2>
 
