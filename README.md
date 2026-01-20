@@ -42,12 +42,10 @@ Spriggan can be used directly from the terminal.
 
 <h3>🔐 Encrypting data</h3>
 
-Run the encryption script and provide the text you want to protect:
+Run the encryption script and insert the desired destination route:
 ````
 python spriggan.py
 ````
-
-Follow the on-screen instructions to input the text.
 Spriggan will return an encrypted output.
 
 <h3>🔓 Decrypting data</h3>
@@ -58,7 +56,7 @@ To decrypt previously encrypted content:
 python decrypt.py
 ````
 
-Paste the encrypted string when prompted, and Spriggan will restore the original data.
+Paste the encrypted route when prompted, and Spriggan will restore the original data.
 
 <h3>🧠 Notes</h3>
 
